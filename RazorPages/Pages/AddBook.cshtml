@@ -1,0 +1,39 @@
+﻿@page
+@model AddBookModel
+@{
+    ViewData["Title"] = "Add Book";
+}
+@if (!ViewData.ContainsKey("Success"))
+{
+
+
+
+<div asp-validation-summary="All"></div>
+    <form method="post">
+
+        <fieldset>
+            <label asp-for="Book.Title"></label>
+            <input asp-for="Book.Title" />
+            <span asp-validation-for="Book.Title"></span>
+        </fieldset>
+        <fieldset>
+            <label asp-for="Book.Author"></label>
+            <input asp-for="Book.Author" />
+            <span asp-validation-for="Book.Author"></span>
+        </fieldset>
+        <fieldset>
+            <label asp-for="Book.Pages"></label>
+            <input asp-for="Book.Pages" />
+            <span asp-validation-for="Book.Pages"></span>
+        </fieldset>
+        <fieldset>
+            <label asp-for="Book.Genre"></label>
+            <input asp-for="Book.Genre" />
+            <span asp-validation-for="Book.Genre"></span>
+        </fieldset>
+        <input type="submit">
+    </form>
+}
+else {
+<p>Success</p>
+}
