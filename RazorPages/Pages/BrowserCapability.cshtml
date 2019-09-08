@@ -1,0 +1,26 @@
+﻿@page
+@model RazorPages.Pages.BrowserCapabilityModel
+@{
+    ViewData["Title"] = "BrowserCapability";
+}
+
+<h1>BrowserCapability</h1>
+<div id="placeholder"></div>
+@section Scripts{
+    @*<script src="~/lib/modernizr/modernizr.js"></script>*@
+    <script src="~/lib/modernizr-custom.js"></script>
+
+    <script>
+        var html = "<ul>";
+        html += "<li>es6collections: " + (Modernizr.es6collections&& Modernizr.es6collections != undefined) + "</li>";
+        html += "<li>es6array: " + (Modernizr.es6array && Modernizr.es6array != undefined) + "</li>";
+        html += "<li>es6string: " + (Modernizr.es6string &&Modernizr.es6string != undefined) + "</li>";
+        html += "<li>es6number: " + (Modernizr.es6number &&Modernizr.es6number != undefined) + "</li>";
+        html += "<li>es6object: " + (Modernizr.es6object &&Modernizr.es6object != undefined) + "</li>";
+
+        html += "</ul>"
+        document.getElementById("placeholder").innerHTML = html;
+
+        
+    </script>
+}

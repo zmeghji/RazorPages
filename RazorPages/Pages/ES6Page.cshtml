@@ -1,0 +1,21 @@
+﻿@page
+@model RazorPages.Pages.ES6PageModel
+@{
+    ViewData["Title"] = "ES6Page";
+}
+
+<h1>ES6Page</h1>
+
+@section Scripts{
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script>
+        var p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve('foo');
+            }, 1000);
+        });
+        p.then(function (result) {
+            console.log(result);
+        });
+    </script>
+}
