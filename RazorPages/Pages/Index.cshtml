@@ -1,10 +1,30 @@
-﻿@page
+﻿@page 
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
-
-<div class="text-center">
+<style>
+    @@media screen and (max-width:600px){
+        #bigScreenDiv{
+            display:none;
+        }
+        #smallScreenDiv{
+            display:block;
+        }
+    }
+    @@media screen and (min-width:601px){
+        #bigScreenDiv{
+            display:block;
+        }
+        #smallScreenDiv{
+            display:none;
+        }
+    }
+</style>
+<div class="text-center" id="bigScreenDiv">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div id="smallScreenDiv">
+    <p>This is a small screen</p>
 </div>
