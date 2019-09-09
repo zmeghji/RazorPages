@@ -1,0 +1,24 @@
+﻿@page
+@model RazorPages.Pages.MobileEventsModel
+@{
+    ViewData["Title"] = "MobileEvents";
+}
+
+<h1>MobileEvents</h1>
+<button id="button">button</button>
+@section Scripts{
+    <script>
+        $("document").ready(
+            function () {
+                var el = document.getElementById("button");
+                el.addEventListener("touchstart", () => {
+                    alert("You have touched the screen");
+                }, false);
+
+                window.addEventListener("deviceorientation", () => {
+                    alert("Device Rotated");
+                })
+            }
+        )
+    </script>
+}
